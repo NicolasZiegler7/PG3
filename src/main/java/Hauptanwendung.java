@@ -1,4 +1,3 @@
-import java.io.PrintStream;
 import java.util.Arrays;
 
 public class Hauptanwendung {
@@ -25,47 +24,13 @@ public class Hauptanwendung {
          * System.out.println("Ende");
          */
 
-        PrintStream o = System.out;
-
-        String[][] studens = new String[1][4];
-
-        studens[0][0] = "Peter";
-        studens[0][1] = "Lustig";
-        studens[0][2] = "24.12.2001";
-        studens[0][3] = "FSWI-1";
-
-        studens = MeineMethoden.addOneEmptyItem(studens);
-
-        studens[1][0] = "Petra";
-        studens[1][1] = "Lustig";
-        studens[1][2] = "01.02.2000";
-        studens[1][3] = "FSWI-1";
-
-        studens = MeineMethoden.addOneEmptyItem(studens);
-
-        studens[2][0] = "Max";
-        studens[2][1] = "Musterman";
-        studens[2][2] = "12.07.2001";
-        studens[2][3] = "FSWI-1";
-
-        String[] names = MeineMethoden.getNamesArray();
-
-        o.println(Arrays.deepToString(names));
-
-        names = MeineMethoden.addXEmptyItem(names, 1);
-
-        names[3] = "Paulus";
-
-        o.println(Arrays.deepToString(names));
-        o.println(Arrays.deepToString(studens));
-        o.println("ENDE");
-
-        for (int i = 0; i < studens.length; i++) {
-            for (int ii = 0; ii < studens[i].length; ii++) {
-                o.println(studens[i][ii]);
-            }
-        }
-
-        MeineMethoden.aufgabenFehler();
+        String[][] studens = MeineMethoden.findAll();
+        /*
+         * for (int i = 0; i < studens.length; i++) {
+         * for (int ii = 0; ii < studens[i].length; ii++) {
+         * o.println(studens[i][ii]);
+         * }
+         * }
+         */
     }
 }

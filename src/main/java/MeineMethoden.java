@@ -1,4 +1,8 @@
+import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.swing.JOptionPane;
 
@@ -91,29 +95,52 @@ public class MeineMethoden {
 
         System.out.println("- - - -");
         try {
-        int index = 5;
-        double[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-        System.out.println(numbers[index]);
-        }
-        catch (Exception e) {
+            int index = 5;
+            double[] numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            System.out.println(numbers[index]);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         try {
-        String zahlAlsZeichen = "123";
-        int zahlAusZeichen = Integer.parseInt(zahlAlsZeichen);
-        }
-        catch (Exception e) {
+            String zahlAlsZeichen = "123";
+            int zahlAusZeichen = Integer.parseInt(zahlAlsZeichen);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         try {
-        String eingabe = JOptionPane.showInputDialog("Gib was ein?");
-        System.out.println(eingabe.contains("Hallo"));
-        }
-        catch (Exception e) {
+            String eingabe = JOptionPane.showInputDialog("Gib was ein?");
+            System.out.println(eingabe.contains("Hallo"));
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    public static String[][] findAll() {
+        Path filePath = Paths
+                .get("/Users/student-sbs/Library/CloudStorage/OneDrive-sbs-herzogenaurach.de/PG3/daten/studenten.csv");
+        try {
+            String content = Files.readString(filePath);
+            String[] lines = content.split("\n");
+
+            String[][] lokBuf = new String[0][0];
+            if (lines.length > 0) {
+                lokBuf = new String[lines.length][4];
+
+                for (int i = 0; i < lines.length; i++) {
+                    String[] elements = lines[i].split(",");
+                    lokBuf[i] = elements;
+
+                }
+
+                return lokBuf;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
