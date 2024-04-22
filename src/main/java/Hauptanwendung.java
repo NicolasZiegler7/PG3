@@ -21,16 +21,18 @@ public class Hauptanwendung {
          * 
          * String[] students = new String[5];
          * 
-         * System.out.println("Ende");
-         */
-
-        String[][] studens = MeineMethoden.findAll();
-        /*
+         * System.out.println("Ende")
+         * 
+         * String[][] studens = MeineMethoden.findAll()
          * for (int i = 0; i < studens.length; i++) {
          * for (int ii = 0; ii < studens[i].length; ii++) {
          * o.println(studens[i][ii]);
          * }
          * }
          */
+
+         Student student = new Student();
+         student.vorname = "Peter";
+         System.out.println(student.vorname);
     }
 }

@@ -3,7 +3,6 @@ import java.io.PrintStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
 import javax.swing.JOptionPane;
 
 public class MeineMethoden {
@@ -119,6 +118,7 @@ public class MeineMethoden {
 
     public static String[][] findAll() {
         Path filePath = Paths
+
                 .get("/Users/student-sbs/Library/CloudStorage/OneDrive-sbs-herzogenaurach.de/PG3/daten/studenten.csv");
         try {
             String content = Files.readString(filePath);
@@ -126,6 +126,7 @@ public class MeineMethoden {
 
             String[][] lokBuf = new String[0][0];
             if (lines.length > 0) {
+
                 lokBuf = new String[lines.length][4];
 
                 for (int i = 0; i < lines.length; i++) {
