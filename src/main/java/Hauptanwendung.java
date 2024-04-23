@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+import models.Student;
+
 public class Hauptanwendung {
     public static void main(String[] args) {
         /*
@@ -31,8 +33,8 @@ public class Hauptanwendung {
          * }
          */
 
-         Student student = new Student();
-         student.vorname = "Peter";
-         System.out.println(student.vorname);
+        Student student = new Student();
+        student.vorname = "Peter";
+        System.out.println(student.vorname);
     }
 }
