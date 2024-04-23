@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.swing.JOptionPane;
 
+import models.Student;
+
 public class MeineMethoden {
     public static int getSumme(int a, int b, PrintStream o) {
         int summe = a + b;
@@ -118,22 +120,23 @@ public class MeineMethoden {
 
     }
 
-    public static String[][] findAll() {
-        Path filePath = Paths
-
-                .get("/Users/student-sbs/Library/CloudStorage/OneDrive-sbs-herzogenaurach.de/PG3/daten/studenten.csv");
+    public static Student[] findAll() {
+        Path filePath = Path
+                .of("/Users/student-sbs/Library/CloudStorage/OneDrive-sbs-herzogenaurach.de/PG3/daten/studenten.csv");
         try {
             String content = Files.readString(filePath);
             String[] lines = content.split("\n");
 
-            String[][] lokBuf = new String[0][0];
+            Student[] lokBuf = new Student[0];
             if (lines.length > 0) {
 
-                lokBuf = new String[lines.length][4];
+                lokBuf = new Student[lines.length];
 
                 for (int i = 0; i < lines.length; i++) {
                     String[] elements = lines[i].split(",");
-                    lokBuf[i] = elements;
+                    Student lokStudent = new Student(elements[0], elements[1], elements[2], elements[3]);
+
+                    lokBuf[i] = lokStudent;
 
                 }
 
