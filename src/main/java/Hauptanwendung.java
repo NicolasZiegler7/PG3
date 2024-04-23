@@ -33,8 +33,16 @@ public class Hauptanwendung {
          * }
          */
 
-        Student student = new Student();
-        student.vorname = "Peter";
-        System.out.println(student.vorname);
+        Student student = new Student(
+            "Peter",
+            "Lustig",
+            "24.12.2000",
+            "FSWI-1");
+        System.out.println(String.format("%s,%s,%s,%s",
+            student.getVorname(),
+            student.getNachname(),
+            student.getGeburtsdatum(),
+            student.getKlasse()));
     }
+
 }
