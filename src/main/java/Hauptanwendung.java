@@ -47,12 +47,40 @@ public class Hauptanwendung {
          */
 
         Student[] students = MeineMethoden.findAll();
-        System.out.println(String.format("%s, %s, %s, %s",
-                students[0].getVorname(),
-                students[0].getNachname(),
-                students[0].getGeburtsdatum(),
-                students[0].getKlasse()));
 
+        for (Student student : students) {
+            if (student.getNachname().equals("Lustig")) {
+                System.out.println(String.format("%s, %s, %s, %s",
+                        student.getVorname(),
+                        student.getNachname(),
+                        student.getGeburtsdatum(),
+                        student.getKlasse()));
+            }
+        }
+
+        System.out.println();
+
+        for (Student student : students) {
+            if (student.getNachname().contains("sen") || student.getNachname().contains("son")) {
+                System.out.println(String.format("%s, %s, %s, %s",
+                        student.getVorname(),
+                        student.getNachname(),
+                        student.getGeburtsdatum(),
+                        student.getKlasse()));
+            }
+        }
+
+        System.out.println();
+
+        for (Student student : students) {
+            if (student.getKlasse().equals("FSWI-2")) {
+                System.out.println(String.format("%s, %s, %s, %s",
+                        student.getVorname(),
+                        student.getNachname(),
+                        student.getGeburtsdatum(),
+                        student.getKlasse()));
+            }
+        }
     }
 
 }
